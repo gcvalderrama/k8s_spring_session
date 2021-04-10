@@ -2,6 +2,9 @@ FROM gradle:jdk8 as builder
     WORKDIR /build/
     COPY ./ .    
     RUN  sed -i -e 's/localhost:50000/service-db2-session.sut.svc.cluster.local:48100/g' ./src/main/resources/application.properties
+    RUN whoami
+    RUN chmod -R 777 /build/
+    RUN gradle wrapper
     RUN ./gradlew build
     RUN ls -a /build/build/libs/
 

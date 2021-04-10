@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: sut-container
-        image: localhost:5000/sut/spring-session:latest
+        image: localhost:32000/sut/spring-session:latest
         imagePullPolicy: Always
         ports:
             - containerPort: 48601        
